@@ -163,3 +163,65 @@ vector<string> convertToPostfix(vector<string> infix){
 
     return postfix;
 }
+double evaluateOperation(vector<string> postfix){
+    vector<string> op = {"+","-","*","/","%"};
+    
+    stack<double> result;
+    vector<string>::iterator i = postfix.begin();
+    double a,b,c;
+    string temp;
+
+    while(i != postfix.end()){
+        if(checkString(*i,op)){
+            a = result.top();
+            // a = 5;
+            result.pop();
+
+            b = result.top();
+            // b = 7;
+            result.pop();
+
+            temp = *i;
+
+            c = doOperation(a,b,temp);
+            result.push(c);
+        }else{
+            result.push(strtod((*i).c_str(),NULL));
+        }
+        
+        i++;
+    }
+
+    return result.top();
+}
+double evaluateOperation(vector<string> postfix){
+    vector<string> op = {"+","-","*","/","%"};
+    
+    stack<double> result;
+    vector<string>::iterator i = postfix.begin();
+    double a,b,c;
+    string temp;
+
+    while(i != postfix.end()){
+        if(checkString(*i,op)){
+            a = result.top();
+            // a = 5;
+            result.pop();
+
+            b = result.top();
+            // b = 7;
+            result.pop();
+
+            temp = *i;
+
+            c = doOperation(a,b,temp);
+            result.push(c);
+        }else{
+            result.push(strtod((*i).c_str(),NULL));
+        }
+        
+        i++;
+    }
+
+    return result.top();
+}
