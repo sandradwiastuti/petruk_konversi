@@ -225,3 +225,19 @@ double evaluateOperation(vector<string> postfix){
 
     return result.top();
 }
+double doOperation(double a, double b, string op){
+    double result;
+    if(op == "+"){
+        result = b + a;
+    }else if(op == "-"){
+        result = b - a;
+    }else if(op == "*"){
+        result = b * a;
+    }else if(op == "/"){
+        result = b / a;
+    }else if(op == "%"){
+        result = (int) b % (int) a;
+    }
+    return result;
+}
+
