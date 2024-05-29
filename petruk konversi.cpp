@@ -161,3 +161,5 @@ vector<string> convertToPostfix(vector<string> infix){
         result.pop();
     }
 
+    return postfix;
+}
